@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+:root {
+  --font-base: "Roboto", sans-serif;
+
+  --color-main: #0b0b0b;
+  --color-black: #1f1f1f;
+  --color-gray: #929292;
+  --color-white: #fff;
+  --color-red: #e50914;
+}
+
+body {
+  background-color: var(--color-main);
+  margin: 0;
+}
+
+.sectionSeries {
+  box-shadow: -20px -20px 10px rgba(0, 0, 0, 0.765);
+}
+
+/* detail page */
+.video-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 10vh; */
+  background-color: rgba(31, 31, 31, 0.3);
+}
+
+.detail-bot {
+  display: flex;
+  /* background-color: red; */
+  padding: 20px;
+}
+
+.detail-desc {
+  display: flex;
+  width: 50%;
+}
+
+.img-mov {
+  margin-left: 150px;
+  border: 0px;
+  border-radius: 15px;
+  width: 30%;
+}
+
+.desc-mov {
+  width: 80%;
+}
+
+.txt-mtd {
+  border: 2px solid grey;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+.detail-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 236px;
+  /* background-color: aqua; */
+}
+
+.detail-play-ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 236px;
+  /* background-color: aqua; */
+}
+
+.img-in-play {
+  display: flex;
+  width: 50%;
+  height: 80%;
+}
