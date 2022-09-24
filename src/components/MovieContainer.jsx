@@ -32,7 +32,7 @@ function MovieContainer() {
           {films?.map((movies, index) => {
             return (
               <Col md={2} key={index}>
-                <MovieList id={movies.id} movieImg={movies.thumbnail} title={movies.title} year={movies.year} />
+                <MovieList id={movies.id} movieImg={movies.thumbNail} title={movies.title} year={movies.year} />
               </Col>
             );
           })}
