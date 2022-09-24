@@ -37,7 +37,7 @@ const DetailMovies = () => {
       <div className="detail-bot">
         <div className="detail-desc">
           <div className="img-mov me-3">
-            <img src={film?.thumbnail} alt="" width="100%" />
+            <img src={film?.thumbNail} alt="" width="100%" />
           </div>
           <div className="desc-mov">
             <h2 className="text-white">{film?.title}</h2>
@@ -61,7 +61,7 @@ const DetailMovies = () => {
           <div
             className="img-in-play mt-1"
             style={{
-              backgroundImage: `linear-gradient(to bottom, rgba(104, 106, 116, 0), rgba(0, 0, 0, 0.99)),url(${film?.thumbnail})`,
+              backgroundImage: `linear-gradient(to bottom, rgba(104, 106, 116, 0), rgba(0, 0, 0, 0.99)),url(${film?.thumbNail})`,
               backgroundPosition: "center center",
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
@@ -85,32 +85,6 @@ const DetailMovies = () => {
         </div>
       </div>
     </div>
-
-    // <div className="app__detail-movies">
-    //   <div className="detail__video-movies">
-    //     <video src={film?.linkFilm} ref={vidRef} loop controls={false} muted />
-    //     <div className="app__video-overlay flex__center">
-    //       {/* <div className="app__video-overlay_circle flex__center" onClick={handleVideo}>
-    //         {playVideo ? <BsPauseFill color="#fff" fontSize={30} /> : <BsFillPlayFill color="#fff" fontSize={30} />}
-    //       </div> */}
-    //     </div>
-    //   </div>
-    //   <div className="app__detail-info-movies">
-    //     <div className="detail__image-movies">
-    //       <img src={film?.thumbnail} alt="detail-series" />
-    //     </div>
-    //     <div className="detail__image-info-movies">
-    //       <h2 className="app__title head-text">{film?.title}</h2>
-    //       <span className="detail_year">{film?.year}</span>
-    //       <span className="detail_category-text">{film?.category?.name}</span>
-    //       <p className="app__detail-desc">{film?.description}</p>
-    //     </div>
-    //     <div className="app__detail-inplay-movies">
-    //       <img src={film?.thumbnail} alt="thumbnail" />
-    //       <span>{film?.title}</span>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
