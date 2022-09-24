@@ -13,7 +13,7 @@ function AddFilm() {
   // const [categoryId, setCategoryId] = useState([]); //Save the selected category id
   const [form, setForm] = useState({
     title: "",
-    thumbnail: "",
+    thumbNail: "",
     linkFilm: "",
     year: "",
     category_id: "",
@@ -70,7 +70,7 @@ function AddFilm() {
       // Store Dataa  with  FormData as Object
       const formData = new FormData();
       formData.set("title", form.title);
-      formData.set("thumbnail", form.thumbnail[0], form.thumbnail[0].name);
+      formData.set("thumbNail", form.thumbNail[0], form.thumbNail[0].name);
       formData.set("linkFilm", form.linkFilm);
       formData.set("year", form.year);
       formData.set("category_id", form.category_id);
