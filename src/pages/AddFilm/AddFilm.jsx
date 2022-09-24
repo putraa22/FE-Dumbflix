@@ -107,7 +107,7 @@ function AddFilm() {
                   Attach Thumbnail
                   <AttachFile />
                 </Form.Label>
-                <Form.Control style={{ display: "none" }} id="thumbnail1" type="file" name="thumbnail" onChange={handleChange} />
+                <Form.Control style={{ display: "none" }} id="thumbnail1" type="file" name="thumbNail" onChange={handleChange} />
               </Form.Group>
             </Col>
           </Row>
