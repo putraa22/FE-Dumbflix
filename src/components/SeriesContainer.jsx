@@ -31,7 +31,7 @@ function SeriesContainer() {
           {films?.map((data, index) => {
             return (
               <Col md={2} key={index}>
-                <SeriesList id={data.id} seriesImg={data.thumbnail} title={data.title} year={data.year} /> {/* Looping */}
+                <SeriesList id={data.id} seriesImg={data.thumbNail} title={data.title} year={data.year} /> {/* Looping */}
               </Col>
             );
           })}
