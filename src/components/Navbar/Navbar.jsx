@@ -132,12 +132,14 @@ import { images } from "../../contstans";
 import { UserContext } from "../../context/userContext";
 import { generateFromString } from "generate-avatar";
 import { Person, Payment, Logout, Movie } from "@mui/icons-material";
+import "./Navbar.scss";
 
 function NavbarComponent() {
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const handleCloseRegister = () => setShowRegister(false);
   const handleShowRegister = () => setShowRegister(true);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleCloseLogin = () => setShowLogin(false);
   const handleShowLogin = () => setShowLogin(true);
@@ -149,6 +151,11 @@ function NavbarComponent() {
     email: "",
     password: "",
   });
+
+  window.onscroll = () => {
+    setIsScrolled(window.pageYOffset === 0 ? false : true);
+    return () => (window.onscroll = null);
+  };
 
   function handleLogout() {
     return dispatch({
@@ -243,7 +250,7 @@ function NavbarComponent() {
 
   return (
     <>
-      <Navbar style={{ backgroundColor: "#1F1F1F" }} expand="lg" className="fixed-top">
+      <Navbar style={{ backgroundColor: "#1F1F1F" }} expand="lg" className={isScrolled ? "app__navbar scrolled" : "app__navbar"}>
         <div className="mx-5 w-100">
           <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ borderColor: "white", backgroundColor: "white" }} />
 
