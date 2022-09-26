@@ -1,126 +1,3 @@
-// import React, { useState, useContext } from "react";
-// import "./Navbar.scss";
-// import { images } from "../../contstans";
-// import { ArrowDropDown, Person, Payment, Logout } from "@mui/icons-material";
-// import { Button } from "@mui/material";
-// import { Link, useNavigate } from "react-router-dom";
-// import { UserContext } from "../../context/userContext";
-// import { Login, Register } from "../../pages";
-
-// const Navbar = (props) => {
-//   const [isScrolled, setIsScrolled] = useState(false);
-//   const [isLogin, setIsLogin] = useState(false)
-
-//   let navigate = useNavigate()
-
-//   const [state, dispatch] = useContext(UserContext)
-
-//   const logout = () => {
-//     console.log(state);
-//     dispatch({
-//       type: "LOGOUT"
-//     })
-//     navigate("/")
-//   }
-
-//   const checkAuth = () => {
-//       if (state.isLogin === true) {
-//           navigate("/")
-//       }
-//   }
-//   checkAuth();
-
-//   const [isRegister, setIsRegister] = useState(false)
-
-//   // const switchLogin = () => {
-//   //     setIsRegister(false)
-//   // }
-//   // const switchRegister = () => {
-//   //     setIsRegister(true)
-//   // }
-
-//   window.onscroll = () => {
-//     setIsScrolled(window.pageYOffset === 0 ? false : true);
-//     return () => (window.onscroll = null);
-//   };
-
-//   const [loginShow, setLoginShow] = React.useState(false);
-//   const [registerShow, setRegisterShow] = React.useState(false);
-//   const handleLoginShow = () => setLoginShow(true)
-//   const handleRegisterShow = () => setRegisterShow(true)
-
-//   const handleLogin = () => {
-//     handleLoginShow()
-//   }
-//   const handleCloseLogin = () => setLoginShow(false)
-
-//   const handleRegister = () => {
-//     handleRegisterShow()
-//   }
-//   const handleCloseRegister = () => setRegisterShow(false)
-
-//   return (
-//     <>
-//       <nav className={isScrolled ? "app__navbar scrolled" : "app__navbar"}>
-//         <div className="nav__container">
-//           <ul className="navbar__links head-text">
-//             <li>
-//               <Link to="/">Home</Link>
-//             </li>
-//             <li>
-//               <Link to="/tv-show">TV Show</Link>
-//             </li>
-//             <li>
-//               <Link to="/movies">Movies</Link>
-//             </li>
-//           </ul>
-//           <div className="nav__logo">
-//             <a href="#home">
-//               <img src={images.logo} alt="navbar-logo" />
-//             </a>
-//           </div>
-//           {state.isLogin ? (
-//             <div className="nav__right">
-//               <img src={images.avartar} alt="avatar" />
-//               <div className="profile">
-//                 <ArrowDropDown className="icon" />
-//                 <div className="options">
-//                   <Link to="/profile">
-//                     <Person className="icon__links" />
-//                     Profile
-//                   </Link>
-//                   <Link to="/pay">
-//                     <Payment className="icon__links" />
-//                     Pay
-//                   </Link>
-//                   <div />
-//                   <button className="nav-border" onClick={logout}>
-//                     <Logout className="icon__links" onClick={logout} />
-//                     Logout
-//                   </button>
-//                 </div>
-//               </div>
-//             </div>
-//           ) : (
-//             <div className="nav__button">
-//               <Button className="login head-text"  onClick={handleLogin} >
-//                 Login
-//               </Button>
-//               <Login show={loginShow} handleClose={handleCloseLogin} />
-//               <Button className="register head-text" onClick={handleRegister}>
-//                 Register
-//               </Button>
-//               <Register show={registerShow} handleClose={handleCloseRegister} />
-//             </div>
-//           )}
-//         </div>
-//       </nav>
-//     </>
-//   );
-// };
-
-// export default Navbar;
-
 /* eslint-disable */
 import { useState, useContext } from "react";
 import { Button, Dropdown, Form, Image, InputGroup, Nav, Navbar } from "react-bootstrap";
@@ -132,14 +9,12 @@ import { images } from "../../contstans";
 import { UserContext } from "../../context/userContext";
 import { generateFromString } from "generate-avatar";
 import { Person, Payment, Logout, Movie } from "@mui/icons-material";
-import "./Navbar.scss";
 
 function NavbarComponent() {
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const handleCloseRegister = () => setShowRegister(false);
   const handleShowRegister = () => setShowRegister(true);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const handleCloseLogin = () => setShowLogin(false);
   const handleShowLogin = () => setShowLogin(true);
@@ -151,11 +26,6 @@ function NavbarComponent() {
     email: "",
     password: "",
   });
-
-  window.onscroll = () => {
-    setIsScrolled(window.pageYOffset === 0 ? false : true);
-    return () => (window.onscroll = null);
-  };
 
   function handleLogout() {
     return dispatch({
@@ -250,7 +120,7 @@ function NavbarComponent() {
 
   return (
     <>
-      <Navbar style={{ backgroundColor: "#1F1F1F" }} expand="lg" className={isScrolled ? "app__navbar scrolled" : "app__navbar"}>
+      <Navbar style={{ backgroundColor: "#1F1F1F" }} expand="lg" className="fixed-top">
         <div className="mx-5 w-100">
           <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ borderColor: "white", backgroundColor: "white" }} />
 
